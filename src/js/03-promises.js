@@ -12,10 +12,12 @@ function onClictButtun(e) {
       amount: { value: amount },
     },
   } = e.target;
-  console.log({ delay, step, amount });
-
+  // console.log({ delay, step, amount });
+  let tempDelay = +delay;
   for (let i = 0; i < amount; i++) {
-    createPromise(i, delay).then(onResolve).catch(onReject);
+    console.log(i, tempDelay);
+    createPromise(i, tempDelay).then(onResolve).catch(onReject);
+    tempDelay += +step;
   }
 }
 
