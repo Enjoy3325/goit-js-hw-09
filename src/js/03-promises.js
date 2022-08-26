@@ -12,7 +12,7 @@ function onClictButtun(e) {
       amount: { value: amount },
     },
   } = e.target;
-  // console.log({ delay, step, amount });
+
   let tempDelay = +delay;
   for (let i = 0; i < amount; i++) {
     console.log(i, tempDelay);
@@ -31,6 +31,7 @@ function createPromise(position, delay) {
         reject({ position, delay });
       }
     }, delay);
+    clearTimeout();
   });
 }
 const onResolve = ({ delay, position }) => {
@@ -39,8 +40,3 @@ const onResolve = ({ delay, position }) => {
 const onReject = ({ delay, position }) => {
   Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
 };
-
-// 1. Вызывается создание промисов с первой задержкой
-// 2. Вызываются промисы шаг * на текущий шаг по номеру
-//  + не забыть добавить значение первоночальной задержки
-//  Сделать механизм который будет вызывать функцию createPromise сколько будет нажиматься amount,
