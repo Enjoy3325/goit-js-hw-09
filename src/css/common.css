@@ -33,7 +33,7 @@ input {
   margin: auto;
 }
 .timer {
-  border: 6px;
+  border: 20px;
   font-size: 48px;
   gap: 30px;
   text-align: center;
@@ -59,7 +59,7 @@ button {
   color: #ffd700;
   justify-content: center;
   background-color: #32cd32;
-  border-radius: 6px;
+  border-radius: 20px;
   border-style: solid;
   padding: 10px 7px 2px;
   text-rendering: auto;
